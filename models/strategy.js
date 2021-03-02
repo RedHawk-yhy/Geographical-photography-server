@@ -10,6 +10,12 @@ const modelSchema = new mongoose.Schema(
     },
     title:{
       type:String
+    },
+    author:{
+      type:String
+    },
+    date:{
+      type:String
     }
   },
   {
@@ -17,5 +23,5 @@ const modelSchema = new mongoose.Schema(
   }
 )
 
-const Skills = mongoose.model('skills',modelSchema)
-module.exports = Skills
+const Strategy = mongoose.model('strategy',modelSchema)
+module.exports = Strategy
