@@ -2,22 +2,22 @@ const { json } = require('express')
 const { model } = require('mongoose')
 
 const router = require('express').Router()
-const Movie = require('../../models/picture')
+const Skills = require('../../models/skills')
 
 //  查找
 router.get('/',async (req,res) => {
-  const data = await Movie.find()
+  const data = await Skills.find()
   res.json(data)
 })
 //  通过id查找
 router.get('/:id',async (req,res) => {
-  const data = await Movie.findById(req.params.id)
+  const data = await Skills.findById(req.params.id)
   res.json(data)
 })
 
 //  新增
 router.post('/',async (req,res) => {
-  const m = new Movie(req.body);
+  const m = new Skills(req.body);
   await m.save()
   res.json({
     code:1,
@@ -27,7 +27,7 @@ router.post('/',async (req,res) => {
 
 //  删除
 router.delete('/:id',async (req,res) => {
-  const data = await Movie.findOneAndDelete(req.params.id)
+  const data = await Skills.findOneAndDelete(req.params.id)
   res.json({
     code:1,
     msg:'删除成功'

@@ -1,14 +1,14 @@
 const fs = require('fs')
 const express = require('express')
 const mongoose = require('mongoose')
-const Picture = require('./models/picture')
+const Picture = require('./models/skills')
 const app = express()
 
 //解析请求体中传递的rul编码的数据
 app.use(express.urlencoded()) //使用中间件
 app.use(express.json())
 
-app.use('/api/v1/p',require('./routes/v1/picture'))
+app.use('/api/v1/p',require('./routes/skills/skills'))
 
 mongoose.connect('mongodb://localhost:27017')
   .then(()=>{

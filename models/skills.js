@@ -17,5 +17,5 @@ const modelSchema = new mongoose.Schema(
   }
 )
 
-const Picture = mongoose.model('picture',modelSchema)
-module.exports = Picture
+const Skills = mongoose.model('skills',modelSchema)
+module.exports = Skills
