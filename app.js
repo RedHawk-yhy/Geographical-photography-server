@@ -21,27 +21,27 @@ mongoose.connect('mongodb://localhost:27017')
     console.log('数据库连接成功')
     // loadData()
     // loadStrategyData()
-    loadAwardData()
+    // loadAwardData()
   })
   .catch(err=>console.log(err))
 
 //  摄影技巧数据填充
 function loadSkillsData(){
   const dataList = JSON.parse(fs.readFileSync('./static/skillsList.json'))
-  console.log(dataList);
+  // console.log(dataList);
   Skills.insertMany(dataList).then(()=>console.log('插入数据成功'))
 }
 //  旅游攻略数据填充
 function loadStrategyData(){
   const dataList = JSON.parse(fs.readFileSync('./static/strategyList.json'))
-  console.log(dataList);
+  // console.log(dataList);
   Strategy.insertMany(dataList).then(()=>console.log('插入数据成功'))
 }
 //  获奖作品数据填充
 function loadAwardData() { 
   const dataBuffer = fs.readFileSync('./static/awardList.json')
   const data = iconv.decode(dataBuffer,'utf-8')
-  console.log(data);
+  // console.log(data);
   Award.insertMany(data).then(() => console.log('插入数据成功'))
 }
 
