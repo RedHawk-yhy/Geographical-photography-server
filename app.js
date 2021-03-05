@@ -19,7 +19,7 @@ app.use('/api/v1/award',require('./routes/award/award'))
 mongoose.connect('mongodb://localhost:27017')
   .then(()=>{
     console.log('数据库连接成功')
-    // loadData()
+    // loadSkillsData()
     // loadStrategyData()
     // loadAwardData()
   })
