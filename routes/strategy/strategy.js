@@ -3,11 +3,14 @@ const { model } = require('mongoose')
 
 const router = require('express').Router()
 const Strategy = require('../../models/strategy')
-
+const { findAllSkill } = require('../../service/strategySkip')
 //  查找
-router.get('/',async (req,res) => {
-  const data = await Strategy.find()
-  res.json(data)
+router.get('/',async function(req,res){
+  const obj = req.query;
+  const page = obj.page || 1;
+  const size = obj.size || 5;
+  const val = await findAllSkill(parseInt(page), parseInt(size));
+  res.json(val)
 })
 //  通过id查找
 router.get('/:id',async (req,res) => {
