@@ -29,7 +29,6 @@ router.post('/',async (req,res) => {
     msg:'保存成功'
   })
 })
-
 //  删除
 router.delete('/:id',async (req,res) => {
   const data = await Finds.findOneAndDelete(req.params.id)
@@ -38,5 +37,12 @@ router.delete('/:id',async (req,res) => {
     msg:'删除成功'
   })
 })
+
+router.post('/search',async (req,res) => {
+  const data = await Finds.find({'name':'世界'})
+  console.log(data);
+  res.json(data)
+})
+
 
 module.exports = router
