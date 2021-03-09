@@ -7,6 +7,7 @@ const { findAll } = require('../../service/findsSkip')
 
 //  查找
 router.get('/',async function (req,res) { 
+  console.log(req.query);
   const obj = req.query;
   const page = obj.page || 1;
   const size = obj.size || 5;
@@ -38,11 +39,6 @@ router.delete('/:id',async (req,res) => {
   })
 })
 
-router.post('/search',async (req,res) => {
-  const data = await Finds.find({'name':'世界'})
-  console.log(data);
-  res.json(data)
-})
 
 
 module.exports = router

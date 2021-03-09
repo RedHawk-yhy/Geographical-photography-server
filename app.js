@@ -16,6 +16,7 @@ app.use('/api/v1/skills',require('./routes/skills/skills'))
 app.use('/api/v1/strategy',require('./routes/strategy/strategy'))
 app.use('/api/v1/award',require('./routes/award/award'))
 app.use('/api/v1/find',require('./routes/find/find'))
+app.use('/api/v1/search',require('./routes/search/search'))
 
 
 

@@ -1,4 +1,4 @@
-const { findBySkip } = require('../dao/findsSkip')
+const { findBySkip,findByName } = require('../dao/findsSkip')
 const Finds = require('../models/find')
 
 module.exports = {
@@ -10,6 +10,16 @@ module.exports = {
     if (res.length > 0) {
       return { success: res, msg: '查询成功' ,pagination:{ page,size,total }}
     } else {
+      return { success: false, msg: '查询失败' }
+    }
+  },
+  async findByName(name){ 
+    const res = await findByName(name)
+    const total = res.length
+    if (res.length > 0) {
+      return { success: res, msg: '查询成功',total }
+    } else {
+      console.log(res);
       return { success: false, msg: '查询失败' }
     }
   }
