@@ -19,7 +19,6 @@ module.exports = {
     if (res.length > 0) {
       return { success: res, msg: '查询成功',total }
     } else {
-      console.log(res);
       return { success: false, msg: '查询失败' }
     }
   }
