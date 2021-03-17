@@ -28,7 +28,6 @@ mongoose.connect('mongodb://localhost:27017')
     // loadFindData()
     // loadSkillsData()
     // loadStrategyData()
-    // loadAwardData()
   })
   .catch(err=>console.log(err))
 //  摄影图片数据填充
@@ -50,13 +49,13 @@ function loadStrategyData(){
   // console.log(dataList);
   Strategy.insertMany(dataList).then(()=>console.log('插入数据成功'))
 }
-//  获奖作品数据填充
-function loadAwardData() { 
-  const dataBuffer = fs.readFileSync('./static/awardList.json')
-  const data = iconv.decode(dataBuffer,'utf-8')
-  // console.log(data);
-  Award.insertMany(data).then(() => console.log('插入数据成功'))
-}
+// //  获奖作品数据填充
+// function loadAwardData() { 
+//   const dataBuffer = fs.readFileSync('./static/awardList.json')
+//   const data = iconv.decode(dataBuffer,'utf-8')
+//   // console.log(data);
+//   Award.insertMany(data).then(() => console.log('插入数据成功'))
+// }
 
 app.listen(8088,() => {
   console.log('服务器启动在8088端口。。。')
