@@ -23,6 +23,7 @@ app.use('/api/v1/goods',require('./routes/goods/goods'))
 
 
 mongoose.connect('mongodb://localhost:27017')
+// mongoose.connect('mongodb+srv://yhy:wowei0427.@graduation-project.yvsfu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
   .then(()=>{
     console.log('数据库连接成功')
     // loadFindData()
