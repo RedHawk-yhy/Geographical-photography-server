@@ -12,6 +12,9 @@ const app = express()
 app.use(express.urlencoded()) //使用中间件
 app.use(express.json())
 
+//  将public设置为静态资源文件夹
+app.use('/public', express.static('public'))
+
 app.use('/api/v1/skills',require('./routes/skills/skills'))
 app.use('/api/v1/strategy',require('./routes/strategy/strategy'))
 app.use('/api/v1/award',require('./routes/award/award'))
